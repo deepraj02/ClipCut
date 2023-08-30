@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/routes/route_config.dart';
 
 void main() {
-  runApp(const ClipCut());
+  runApp(const ProviderScope(child: ClipCut()));
 }
 
 class ClipCut extends StatelessWidget {
