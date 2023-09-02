@@ -1,10 +1,16 @@
+import '../../../../config/global_keys.config.dart';
+import '../../../home/presentation/pages/home.page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
   static const String route = '/splash';
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 2), () {
+      GoRouter.of(GlobalKeysConfig.main.currentContext!).go(HomePage.route);
+    });
     return const Scaffold(
         backgroundColor: Colors.red,
         body: Center(
@@ -29,7 +35,7 @@ class SplashPage extends StatelessWidget {
                 ],
               )),
           SizedBox(width: 20),
-          Text("Hello There", style: TextStyle(color: Colors.white))
+          Text('Hello There', style: TextStyle(color: Colors.white))
         ])));
   }
 }
