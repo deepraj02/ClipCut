@@ -10,24 +10,11 @@ class ShellPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: NavigationBar(
-          destinations: const [
-            // the appearance of each tab is defined with a [NavigationDestination] widget
-            NavigationDestination(label: 'Section A', icon: Icon(Icons.home)),
-            NavigationDestination(
-                label: 'Section B', icon: Icon(Icons.settings)),
-          ],
-          onDestinationSelected: (index) {/* TODO: move to the tab at index */},
-        ),
         key: GlobalKeysConfig.mainScaffold,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Stack(
           children: [
             Center(child: child),
-            // const Align(
-            //   alignment: Alignment.bottomLeft,
-            //   //child: NavWidget(),
-            // ),
           ],
         ));
   }
