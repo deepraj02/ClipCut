@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../config/global_keys.config.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatelessWidget {
   static const String route = '/home';
@@ -10,8 +9,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: IconButton.filled(
-        onPressed: () {
-          debugPrint(GlobalKeysConfig.navBar.currentContext.toString());
+        onPressed: () async {
+          XFile? file = await ImagePicker().pickImage(
+            source: ImageSource.gallery,
+          );
+          if (file != null) {}
         },
         icon: const Icon(Icons.upload_file_outlined),
       ),
