@@ -10,6 +10,7 @@ class ShellPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(GlobalKeysConfig.main.currentContext.toString())),
         key: GlobalKeysConfig.mainScaffold,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Stack(

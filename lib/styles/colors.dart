@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ClipCutColors {
-
   static const Color lightSeedColor = Color(0x0ff0981f);
   static const Color lightPrimary = Color(0xFF098E1F);
   static const Color lightSecondary = Color(0xFFADADAD);
