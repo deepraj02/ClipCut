@@ -17,13 +17,17 @@ class HomePage extends StatelessWidget {
           );
           if (file != null) {
             //GoRouter.of(GlobalKeysConfig.navBar.currentContext!)
-            // context.goNamed(EditingPage.route, queryParameters: {
-            //   'selectedImage': file.path,
-            // });
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (context) => EditingPage(selectedImage: file.path)),
-            );
+            // context.go(
+            //   EditingPage.route,
+            //   extra: file.path,
+            // );
+            if (context.mounted) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) =>
+                        EditingPage(selectedImage: file.path)),
+              );
+            }
           }
         },
         icon: const Icon(Icons.upload_file_outlined),
