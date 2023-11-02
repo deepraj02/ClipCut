@@ -4,7 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'src/routes/route_config.dart';
 
 void main() {
-  runApp(const ProviderScope(child: ClipCut()));
+  runApp(
+    const ProviderScope(
+      child: ClipCut(),
+    ),
+  );
 }
 
 class ClipCut extends StatelessWidget {
@@ -13,6 +17,7 @@ class ClipCut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      
       debugShowCheckedModeBanner: false,
       routeInformationProvider: AppRoutes.router.routeInformationProvider,
       routeInformationParser: AppRoutes.router.routeInformationParser,
