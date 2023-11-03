@@ -20,10 +20,14 @@ class EditingPage extends StatefulWidget {
 class _EditingPageState extends State<EditingPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Image.file(
-        File(
-          widget.selectedImage,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: Image.file(
+          File(
+            widget.selectedImage,
+          ),
         ),
       ),
     );
