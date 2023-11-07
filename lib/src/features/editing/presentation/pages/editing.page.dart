@@ -4,6 +4,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../../data/repository/iedit_image.dart';
+
 class EditingPage extends StatefulWidget {
   static const String route = '/edit';
   const EditingPage({
@@ -17,7 +19,7 @@ class EditingPage extends StatefulWidget {
   State<EditingPage> createState() => _EditingPageState();
 }
 
-class _EditingPageState extends State<EditingPage> {
+class _EditingPageState extends IEditImageRepository {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,6 +32,7 @@ class _EditingPageState extends State<EditingPage> {
           ),
         ),
       ),
+      
     );
   }
 }
