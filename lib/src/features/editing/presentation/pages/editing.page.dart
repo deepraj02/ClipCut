@@ -4,7 +4,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../../data/repository/iedit_image.dart';
+import '../../../../../styles/colors.dart';
+import '../widgets/floating.widget.dart';
 
 class EditingPage extends StatefulWidget {
   static const String route = '/edit';
@@ -19,20 +20,34 @@ class EditingPage extends StatefulWidget {
   State<EditingPage> createState() => _EditingPageState();
 }
 
-class _EditingPageState extends IEditImageRepository {
+TextEditingController controller = TextEditingController();
+
+class _EditingPageState extends State<EditingPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Align(
-        alignment: Alignment.topCenter,
-        child: Image.file(
-          File(
-            widget.selectedImage,
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Image.file(
+            File(
+              widget.selectedImage,
+            ),
           ),
         ),
       ),
-      
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          addNewDialog(context, controller);
+        },
+        backgroundColor: ClipCutColors.darkTertiary,
+        tooltip: 'Add Text',
+        child: const Icon(
+          Icons.edit,
+          color: ClipCutColors.lightPrimary,
+        ),
+      ),
     );
   }
 }

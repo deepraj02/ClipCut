@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../config/global_keys.config.dart';
-import '../editing/presentation/widgets/floating.widget.dart';
 
 class ShellPage extends StatelessWidget {
   static const String route = '/main';
@@ -29,7 +28,6 @@ class ShellPage extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: textAddButton,
     );
   }
 }
