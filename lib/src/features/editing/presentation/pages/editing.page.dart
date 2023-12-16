@@ -41,11 +41,11 @@ class _EditingPageState extends State<EditingPage> {
         onPressed: () {
           addNewDialog(context, controller);
         },
-        backgroundColor: ClipCutColors.darkTertiary,
+        backgroundColor: ClipCutColors.primaryColor,
         tooltip: 'Add Text',
         child: const Icon(
           Icons.edit,
-          color: ClipCutColors.lightPrimary,
+          color: ClipCutColors.secondaryColor,
         ),
       ),
     );

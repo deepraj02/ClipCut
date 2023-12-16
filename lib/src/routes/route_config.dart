@@ -38,7 +38,8 @@ class AppRoutes {
                 ) {
                   return NoTransitionPage(
                       child: EditingPage(
-                    selectedImage: state.uri.queryParameters['selectedImage'] ?? '',
+                    selectedImage:
+                        state.uri.queryParameters['selectedImage'] ?? '',
                   ));
                 }),
           ],

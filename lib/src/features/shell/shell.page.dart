@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../styles/colors.dart';
 import '../../config/global_keys.config.dart';
 
 class ShellPage extends StatelessWidget {
@@ -12,15 +16,23 @@ class ShellPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(GlobalKeysConfig.main.currentContext.toString()),
+        backgroundColor: ClipCutColors.accentColor,
+        surfaceTintColor: ClipCutColors.primaryColor,
+        title: const Text('ClipCut'),
         leading: IconButton(
             onPressed: () {
-              context.pop();
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                if (Platform.isAndroid) {
+                  SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                }
+                exit(0);
+              }
             },
             icon: const Icon(Icons.arrow_back_ios)),
       ),
       key: GlobalKeysConfig.mainScaffold,
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Stack(
         children: [
           Center(
