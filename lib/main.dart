@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/routes/route_config.dart';
+import 'styles/colors.dart';
 
 void main() {
   runApp(
@@ -17,7 +18,7 @@ class ClipCut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      
+      color: ClipCutColors.backgroundColor,
       debugShowCheckedModeBanner: false,
       routeInformationProvider: AppRoutes.router.routeInformationProvider,
       routeInformationParser: AppRoutes.router.routeInformationParser,
